@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Pizza</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+    $(function(){
+        $('#prepBtn').click(function(){
+            $('#customZa').html("<strong>This pizza will have:</strong><br/>" + $('input:radio:checked').val() + " Crust <br/>")
+            $('input:checkbox:checked').each(function(){
+                $('#customZa').append($(this).val() + "<br/>")
+            });
+        }); //end click
+        }); //end ready
+    </script>
+</head>
+<body>
+    <form id="pizzaform" action="#">
+        <table>
+            <tr>
+                <td><strong>Toppings</strong></td>
+                <td><strong>Crust</strong></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Sausage">Sausage</td>
+                <td><input type="radio" name="crust" value="Regular" checked="checked">Regular</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Pepperoni">Pepperoni</td>
+                <td><input type="radio" name="crust" value="Deep Dish">Deep Dish</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Ham">Ham</td>
+                <td><input type="radio" name="crust" value="Thin">Thin</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Green Peppers">Green Peppers</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Mushrooms">Mushrooms</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Onions">Onions</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="Pineapple">Pineapple</td>
+                <td></td>
+            </tr>
+        </table>
+        <p><input type="button" id="prepBtn" value="Prep Pizza"></p>
+    </form>
+
+    <div id="customZa">
+
+    </div>
+
+</body>
+</html>
